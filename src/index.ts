@@ -7,7 +7,6 @@ interface Country{
   NewConfirmed: number;
   NewDeaths: number;
   NewRecovered: number;
-  Slug: string;
   TotalConfirmed: number;
   TotalDeaths: number;
   TotalRecovered: number;
@@ -21,6 +20,8 @@ fetch('https://api.covid19api.com/summary')
 
   // Create the table element
   const table = document.createElement('table');
+  table.classList.add('table');
+  table.classList.add('table-striped');
 
   // Add the header row
   const rowHeader = document.createElement('tr');
@@ -49,10 +50,6 @@ fetch('https://api.covid19api.com/summary')
   headerNewRecovered.textContent = 'New Recovered';
   rowHeader.appendChild(headerNewRecovered);
 
-  const headerSlug = document.createElement('th');
-  headerSlug.textContent = 'Slug';
-  rowHeader.appendChild(headerSlug);
-
   const headerTotalCases = document.createElement('th');
   headerTotalCases.textContent = 'Total Cases';
   rowHeader.appendChild(headerTotalCases);
@@ -80,7 +77,7 @@ fetch('https://api.covid19api.com/summary')
       row.appendChild(countryCodeCell);
 
       const dateCell = document.createElement('td');
-      dateCell.textContent = country.Date.toString();
+      dateCell.textContent = new Date(country.Date).toLocaleDateString();
       row.appendChild(dateCell);
 
       const newCasesCell = document.createElement('td');
@@ -94,10 +91,6 @@ fetch('https://api.covid19api.com/summary')
       const newRecoveredCell = document.createElement('td');
       newRecoveredCell.textContent = country.NewRecovered.toString();
       row.appendChild(newRecoveredCell);
-
-      const slugCell = document.createElement('td');
-      slugCell.textContent = country.Slug;
-      row.appendChild(slugCell);
 
       const totalCasesCell = document.createElement('td');
       totalCasesCell.textContent = country.TotalConfirmed.toString();

@@ -5,8 +5,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>COVID-19 Summary</title>
 </head>
+
+<style>
+    /*----------Colors-------------*/
+    :root {
+        --white: #ffffff;
+        --light_blue: #24508b;
+        --dark_blue: #243364;
+        --black: black;
+    }
+
+    /*----------Main/Body-------------*/
+    * {
+        margin: 0px;
+        padding: 0px;
+        text-decoration: none;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background-color: var(--dark_blue);
+    }
+
+    table {
+        margin: 40px auto;
+        background-color: var(--white);
+        border: 8px solid var(--light_blue);
+        width: 100%;
+        outline: hidden;
+    }
+
+    table th,
+    td {
+        padding: 6px 14px;
+        text-align: center;
+        border: 1px solid var(--light_blue);
+        width: fit-content;
+    }
+
+    th {
+        color: var(--dark_blue);
+        font-size: 18px;
+        font-weight: bold;
+    }
+</style>
+
 <script src="./dist/index.js"></script>
 
 <body>
